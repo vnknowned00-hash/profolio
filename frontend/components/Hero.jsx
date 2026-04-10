@@ -39,7 +39,7 @@
             </span>
           </h1>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed">
-            I'm a versatile full-stack developer focused on responsive UI, scalable REST APIs, and PostgreSQL database architecture. Let's create something amazing together.
+            I'm focused on responsive UI, scalable REST APIs, and PostgreSQL database architecture. Let's create something amazing together.
           </p>
           <div className="flex gap-4 mb-12 flex-wrap">
             <button onClick={() => scrollToSection('projects')} className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition duration-300 transform hover:-translate-y-1">
@@ -83,10 +83,6 @@
             )}
           </div>
           <div className="mt-6 text-slate-400 text-sm leading-relaxed">
-            <div className="mb-4">
-              <p className="text-xs uppercase tracking-[0.35em] text-cyan-400">Name</p>
-              <p className="text-white font-semibold">Justin Carl A. Moslares</p>
-            </div>
             <div className="mb-4">
               <p className="text-xs uppercase tracking-[0.35em] text-cyan-400">Location</p>
               <p className="text-slate-200">Borongan, Eastern Samar, Philippines</p>
