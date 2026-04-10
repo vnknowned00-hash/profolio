@@ -15,8 +15,8 @@
       id: 2,
       title: 'Pasabuy System',
       description: 'Responsive ordering platform deployed with modern frontend and backend tools.',
-      image: 'assets/images/pasabuybes.jpg',
-      preview: 'assets/images/pasabuybes.jpg',
+      image: 'assets/images/pabuybes.jpg',
+      preview: 'assets/images/pabuybes.jpg',
       tech: ['React', 'HTML5', 'CSS3', 'JavaScript', 'REST API', 'Netlify'],
       url: 'https://pasabuy-bes.netlify.app/'
     }
