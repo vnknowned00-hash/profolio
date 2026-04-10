@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin Carl A. Moslares | Portfolio</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="custom.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(15,23,42,0.5);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(56,189,248,0.6);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(56,189,248,0.8);
+  }
+
+  /* Animated gradient */
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Glow effect */
+  .glow-effect {
+    box-shadow: 0 0 30px rgba(56,189,248,0.3);
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 50px rgba(56,189,248,0.5);
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Fade in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .fade-in-delay-1 { animation-delay: 0.1s; }
+  .fade-in-delay-2 { animation-delay: 0.2s; }
+  .fade-in-delay-3 { animation-delay: 0.3s; }
+</style>
+
+</head>
+
+<body class="bg-slate-950 text-slate-100 overflow-x-hidden">
+
+<!-- PARTICLE CANVAS -->
+<canvas id="bg"></canvas>
+
+<!-- NAV -->
+<nav class="fixed w-full top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-cyan-500/20">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-6 flex items-center justify-between">
+    <div>
+      <h2 class="text-xl font-bold text-cyan-400">Justin Carl A. Moslares</h2>
+      <p class="text-sm text-slate-400">Full Stack Developer</p>
+    </div>
+    <div class="hidden md:flex gap-8">
+      <a href="#about" class="text-slate-300 hover:text-cyan-400 transition duration-300">About</a>
+      <a href="#skills" class="text-slate-300 hover:text-cyan-400 transition duration-300">Skills</a>
+      <a href="#projects" class="text-slate-300 hover:text-cyan-400 transition duration-300">Projects</a>
+      <a href="#contact" class="text-slate-300 hover:text-cyan-400 transition duration-300">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen pt-40 pb-20 px-6 md:px-12 flex items-center">
+  <div class="max-w-4xl">
+    <div class="inline-block mb-6 px-4 py-2 rounded-full bg-cyan-500/20 border border-cyan-500/40">
+      <p class="text-cyan-400 text-sm font-medium">Welcome to my portfolio</p>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
+      Building polished web experiences
+    </h1>
+    <p class="text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed">
+      I'm a versatile full-stack developer focused on responsive UI, scalable REST APIs, and PostgreSQL database architecture. Let's create something amazing together.
+    </p>
+    <div class="flex gap-4 mb-12 flex-wrap">
+      <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition duration-300 transform hover:-translate-y-1">
+        View My Work
+      </a>
+      <a href="assets/cv.pdf" download class="px-8 py-3 border border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500/10 transition duration-300">
+        Download CV
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="p-6 bg-slate-900/50 border border-cyan-500/20 rounded-xl backdrop-blur">
+        <p class="text-cyan-400 font-semibold mb-2">Frontend</p>
+        <p class="text-slate-400 text-sm">React, HTML5, CSS3, JavaScript, Responsive Design</p>
+      </div>
+      <div class="p-6 bg-slate-900/50 border border-cyan-500/20 rounded-xl backdrop-blur">
+        <p class="text-cyan-400 font-semibold mb-2">Backend</p>
+        <p class="text-slate-400 text-sm">Node.js, Express, REST APIs, JWT, PostgreSQL</p>
+      </div>
+      <div class="p-6 bg-slate-900/50 border border-cyan-500/20 rounded-xl backdrop-blur">
+        <p class="text-cyan-400 font-semibold mb-2">Deployment</p>
+        <p class="text-slate-400 text-sm">Render, Netlify, Supabase, Git, Postman</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12">
+      <p class="text-cyan-400 text-sm font-semibold uppercase tracking-widest mb-2">About</p>
+      <h2 class="text-4xl md:text-5xl font-bold">Industry-ready development</h2>
+    </div>
+    <div class="grid md:grid-cols-5 gap-8">
+      <div class="md:col-span-3">
+        <p class="text-lg text-slate-400 leading-relaxed mb-6">
+          I create responsive and efficient web applications with a focus on clean UI, smooth interactions, and reliable backend architecture. My work blends frontend polish with backend functionality to deliver complete product-ready solutions.
+        </p>
+        <ul class="space-y-3 text-slate-400">
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold mt-1">âœ“</span>
+            <span>Responsive web design with Flexbox and Grid</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold mt-1">âœ“</span>
+            <span>RESTful APIs and authentication using JWT</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold mt-1">âœ“</span>
+            <span>PostgreSQL database design, queries, and management</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold mt-1">âœ“</span>
+            <span>Deployment using Render, Netlify, and Supabase</span>
+          </li>
+        </ul>
+      </div>
+      <div class="md:col-span-2 p-8 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-xl backdrop-blur">
+        <h3 class="text-xl font-bold mb-4 text-cyan-400">Core Strengths</h3>
+        <p class="text-slate-400 leading-relaxed">
+          Problem solving, debugging, and documentation are central to my workflow. I enjoy converting complex requirements into intuitive apps that impress both users and stakeholders.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20 px-6 md:px-12 bg-slate-950">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12 text-center">
+      <p class="text-cyan-400 text-sm font-semibold uppercase tracking-[0.35em] mb-2">Skills</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-100">What I do best</h2>
+    </div>
+
+    <div class="space-y-10">
+      <div class="rounded-[2rem] border border-slate-700/70 bg-slate-900/50 p-6 md:p-8 shadow-[0_20px_50px_rgba(15,23,42,0.35)]">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-cyan-400 text-sm uppercase tracking-[0.35em] mb-2">💻 Web Development Skills</p>
+            <p class="text-xl md:text-2xl font-semibold text-slate-100">Frontend Development</p>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">HTML5</h4>
+            <p class="text-sm text-slate-400">Semantic Markup</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">CSS3</h4>
+            <p class="text-sm text-slate-400">Flexbox, Grid, Animations</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">JavaScript</h4>
+            <p class="text-sm text-slate-400">ES6+</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">React</h4>
+            <p class="text-sm text-slate-400">Component-Based Development, Hooks</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Tailwind CSS</h4>
+            <p class="text-sm text-slate-400">Utility-first styling</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Bootstrap</h4>
+            <p class="text-sm text-slate-400">Responsive UI framework</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Responsive Web Design</h4>
+            <p class="text-sm text-slate-400">Mobile-first approach</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">UI/UX Design Principles</h4>
+            <p class="text-sm text-slate-400">Design fundamentals</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">DOM Manipulation</h4>
+            <p class="text-sm text-slate-400">Interactive UI behavior</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Version Control</h4>
+            <p class="text-sm text-slate-400">Git & GitHub</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-slate-700/70 bg-slate-900/50 p-6 md:p-8 shadow-[0_20px_50px_rgba(15,23,42,0.35)]">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-cyan-400 text-sm uppercase tracking-[0.35em] mb-2">⚙️ Backend Development</p>
+            <p class="text-xl md:text-2xl font-semibold text-slate-100">Server-side development</p>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Node.js</h4>
+            <p class="text-sm text-slate-400">Basic to Intermediate</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Express.js</h4>
+            <p class="text-sm text-slate-400">API framework</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">RESTful API Development</h4>
+            <p class="text-sm text-slate-400">API design</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Authentication & Authorization</h4>
+            <p class="text-sm text-slate-400">JWT & Sessions</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">CRUD Operations</h4>
+            <p class="text-sm text-slate-400">Create / Read / Update / Delete</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Server-side Validation</h4>
+            <p class="text-sm text-slate-400">Data validation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-slate-700/70 bg-slate-900/50 p-6 md:p-8 shadow-[0_20px_50px_rgba(15,23,42,0.35)]">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-cyan-400 text-sm uppercase tracking-[0.35em] mb-2">🗄️ Database Management</p>
+            <p class="text-xl md:text-2xl font-semibold text-slate-100">Data storage and modeling</p>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">SQL</h4>
+            <p class="text-sm text-slate-400">MySQL / PostgreSQL</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">NoSQL</h4>
+            <p class="text-sm text-slate-400">Firebase / MongoDB</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Database Design</h4>
+            <p class="text-sm text-slate-400">Normalization & modeling</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Data Modeling</h4>
+            <p class="text-sm text-slate-400">Schema planning</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">CRUD Operations with Databases</h4>
+            <p class="text-sm text-slate-400">Database workflows</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-slate-700/70 bg-slate-900/50 p-6 md:p-8 shadow-[0_20px_50px_rgba(15,23,42,0.35)]">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-cyan-400 text-sm uppercase tracking-[0.35em] mb-2">🚀 Deployment & DevOps</p>
+            <p class="text-xl md:text-2xl font-semibold text-slate-100">Deployment and hosting</p>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Netlify</h4>
+            <p class="text-sm text-slate-400">Frontend deployment</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Vercel</h4>
+            <p class="text-sm text-slate-400">Web app deployment</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">GitHub Pages</h4>
+            <p class="text-sm text-slate-400">Static hosting</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">CI/CD Concepts</h4>
+            <p class="text-sm text-slate-400">Build automation basics</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Environment Variables</h4>
+            <p class="text-sm text-slate-400">Config management</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Domain & Hosting Setup</h4>
+            <p class="text-sm text-slate-400">DNS and hosting setup</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-slate-700/70 bg-slate-900/50 p-6 md:p-8 shadow-[0_20px_50px_rgba(15,23,42,0.35)]">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-cyan-400 text-sm uppercase tracking-[0.35em] mb-2">🛠️ Tools & Technologies</p>
+            <p class="text-xl md:text-2xl font-semibold text-slate-100">Tools, testing, and platform support</p>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Visual Studio Code</h4>
+            <p class="text-sm text-slate-400">Code editor</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Git & GitHub</h4>
+            <p class="text-sm text-slate-400">Source control</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Chrome DevTools</h4>
+            <p class="text-sm text-slate-400">Browser debugging</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Figma</h4>
+            <p class="text-sm text-slate-400">UI design</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Postman</h4>
+            <p class="text-sm text-slate-400">API testing</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Supabase</h4>
+            <p class="text-sm text-slate-400">Backend-as-a-Service</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Firebase Authentication</h4>
+            <p class="text-sm text-slate-400">Auth service</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Image Upload Handling</h4>
+            <p class="text-sm text-slate-400">File uploads</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">PDF Generation</h4>
+            <p class="text-sm text-slate-400">Document exports</p>
+          </div>
+          <div class="rounded-3xl border border-slate-700/70 bg-slate-950/90 p-5 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:bg-slate-900/95">
+            <h4 class="mb-3 text-lg font-semibold text-slate-100">Admin Dashboard Development</h4>
+            <p class="text-sm text-slate-400">Admin interface builds</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-20 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12">
+      <p class="text-cyan-400 text-sm font-semibold uppercase tracking-widest mb-2">Projects</p>
+      <h2 class="text-4xl md:text-5xl font-bold">Real applications built for users</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- OJT Tracker -->
+      <div class="group bg-slate-900/50 border border-cyan-500/20 rounded-xl overflow-hidden hover:border-cyan-400 transition backdrop-blur glow-effect">
+        <div class="relative overflow-hidden h-56">
+          <img src="assets/images/ojt.png" alt="OJT Tracker" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">OJT Tracker</h3>
+          <p class="text-slate-400 mb-6">Training management system with authentication and user workflows.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">React</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">Node.js</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">Express</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">PostgreSQL</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">JWT</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">Render</span>
+          </div>
+          <a href="https://tracker-akoq.onrender.com/login" target="_blank" class="inline-block px-6 py-2 bg-cyan-500/20 text-cyan-400 border border-cyan-500/50 rounded-lg hover:bg-cyan-500/30 font-semibold transition">
+            View Project â†’
+          </a>
+        </div>
+      </div>
+
+      <!-- Pasabuy System -->
+      <div class="group bg-slate-900/50 border border-cyan-500/20 rounded-xl overflow-hidden hover:border-cyan-400 transition backdrop-blur glow-effect">
+        <div class="relative overflow-hidden h-56">
+          <img src="assets/images/pasabuy.png" alt="Pasabuy System" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Pasabuy System</h3>
+          <p class="text-slate-400 mb-6">Responsive ordering platform deployed with modern frontend and backend tools.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">React</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">HTML5</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">CSS3</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">JavaScript</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">REST API</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">Netlify</span>
+          </div>
+          <a href="https://pasabuy-bes.netlify.app/" target="_blank" class="inline-block px-6 py-2 bg-cyan-500/20 text-cyan-400 border border-cyan-500/50 rounded-lg hover:bg-cyan-500/30 font-semibold transition">
+            View Project â†’
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12">
+      <p class="text-cyan-400 text-sm font-semibold uppercase tracking-widest mb-2">Contact</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's build something together</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="p-8 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-xl backdrop-blur">
+        <p class="text-slate-300 mb-4">
+          I'm always excited about new projects and opportunities to create impactful web applications.
+        </p>
+        <div class="space-y-4">
+          <div>
+            <p class="text-cyan-400 font-semibold mb-1">Phone</p>
+            <p class="text-slate-400">09561234328</p>
+          </div>
+          <div>
+            <p class="text-cyan-400 font-semibold mb-1">Email</p>
+            <p class="text-slate-400">mimongbahalay@gmail.com</p>
+          </div>
+          <div>
+            <p class="text-cyan-400 font-semibold mb-1">Availability</p>
+            <p class="text-slate-400">Open to freelance and project collaborations</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-8 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-cyan-500/30 rounded-xl backdrop-blur">
+        <h3 class="text-xl font-bold mb-4 text-cyan-400">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="https://github.com/Pandor4x" target="_blank" class="text-slate-400 hover:text-cyan-400 transition">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/pandora-pandora-46a3b9279/" target="_blank" class="text-slate-400 hover:text-cyan-400 transition">LinkedIn</a></li>
+          <li><a href="https://twitter.com" target="_blank" class="text-slate-400 hover:text-cyan-400 transition">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 px-6 md:px-12 border-t border-cyan-500/20 bg-slate-950/50">
+  <div class="max-w-6xl mx-auto text-center text-slate-400">
+    <p>© 2026 Justin Carl A. Moslares. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="three.js"></script>
+
+</body>
+</html>
