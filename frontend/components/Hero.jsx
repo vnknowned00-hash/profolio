@@ -63,12 +63,12 @@
           </div>
         </div>
         <div className="p-6 bg-slate-900/60 border border-cyan-500/20 rounded-[2rem] backdrop-blur shadow-xl shadow-cyan-500/10">
-          <div className="relative mx-auto h-[360px] w-full overflow-hidden rounded-[2rem] border border-cyan-500/40 bg-slate-950/80">
+          <div className="relative mx-auto h-[360px] w-full overflow-hidden rounded-[2rem] border border-cyan-500/40 bg-slate-950/80 profile-hover-card">
             {profileLoaded ? (
               <img
                 src={profileImage}
                 alt="Your profile"
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover object-center profile-hover-image"
                 style={{ objectPosition: 'center 100%' }}
                 onError={() => setProfileLoaded(false)}
               />

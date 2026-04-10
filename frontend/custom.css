@@ -65,6 +65,21 @@ body {
   box-shadow: 0 0 45px rgba(56, 189, 248, 0.35);
 }
 
+.profile-hover-card {
+  transition: background-image 0.35s ease, background-color 0.35s ease;
+}
+
+.profile-hover-card:hover {
+  background-image: url('assets/images/profileback.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-hover-card:hover .profile-hover-image {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
 html {
   scroll-behavior: smooth;
 }
