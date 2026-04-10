@@ -6,8 +6,8 @@
       id: 1,
       title: 'OJT Tracker',
       description: 'Training management system with authentication and user workflows.',
-      image: '../image/ojttracking.jpg',
-      preview: '../image/ojttracking.jpg',
+      image: 'assets/images/ojttracking.jpg',
+      preview: 'assets/images/ojttracking.jpg',
       tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Render'],
       url: 'https://tracker-akoq.onrender.com/login'
     },
@@ -15,8 +15,8 @@
       id: 2,
       title: 'Pasabuy System',
       description: 'Responsive ordering platform deployed with modern frontend and backend tools.',
-      image: '../image/pabuybes.jpg',
-      preview: '../image/pabuybes.jpg',
+      image: 'assets/images/pasabuybes.jpg',
+      preview: 'assets/images/pasabuybes.jpg',
       tech: ['React', 'HTML5', 'CSS3', 'JavaScript', 'REST API', 'Netlify'],
       url: 'https://pasabuy-bes.netlify.app/'
     }

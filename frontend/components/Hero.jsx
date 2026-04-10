@@ -16,7 +16,7 @@
   }, []);
 
   const [profileLoaded, setProfileLoaded] = React.useState(true);
-  const profileImage = '../image/profile.jpg';
+  const profileImage = 'assets/images/profile.jpg';
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -78,7 +78,7 @@
                   <span>+</span>
                 </div>
                 <p className="text-sm font-semibold text-slate-200 mb-2">Your photo goes here</p>
-                <p className="text-center text-xs text-slate-400">Save your image as <span className="text-cyan-300">profile.jpg</span> in <span className="text-cyan-300">/image</span>.</p>
+                <p className="text-center text-xs text-slate-400">Save your image as <span className="text-cyan-300">assets/images/profile.jpg</span> in the frontend folder.</p>
               </div>
             )}
           </div>
