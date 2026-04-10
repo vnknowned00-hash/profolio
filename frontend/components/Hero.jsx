@@ -45,7 +45,7 @@
             <button onClick={() => scrollToSection('projects')} className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition duration-300 transform hover:-translate-y-1">
               View My Work
             </button>
-            <a href="assets/files/Portfolio.pdf" download className="px-8 py-3 border border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500/10 transition duration-300">
+            <a href="./assets/files/Portfolio.pdf" download target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500/10 transition duration-300">
               Download CV
             </a>
           </div>
